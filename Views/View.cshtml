@@ -1,0 +1,57 @@
+﻿
+@using Kendo.Mvc.UI
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+@{
+    ViewBag.Title = "Dual Iframes Window";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.1.119/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.1.119/styles/kendo.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.1.119/js/kendo.all.min.js"></script>
+</head>
+<body>
+
+    @(Html.Kendo().Window()
+        .Name("window")
+        .Title("Dual Iframes Window")
+        .Iframe(true)
+        .Content(@<text>
+            <div>
+                <iframe id="iframe1" src="http://www.example1.com"></iframe>
+            </div>
+            <div>
+                <iframe id="iframe2" src="http://www.example2.com"></iframe>
+            </div>
+        </text>)
+        .Width(800)
+        .Height(600)
+    )
+
+    <script>
+        $(function () {
+            var windowElement = $("#window");
+
+            // Change the content of the first iframe dynamically
+            windowElement.find("#iframe1").attr("src", "http://www.newurl1.com");
+
+            // Change the content of the second iframe dynamically
+            windowElement.find("#iframe2").attr("src", "http://www.newurl2.com");
+
+            // Open the window
+            windowElement.data("kendoWindow").center().open();
+        });
+    </script>
+
+</body>
+</html>
