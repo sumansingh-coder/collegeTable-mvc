@@ -1,0 +1,60 @@
+﻿@model CollegeProject.ViewModel.EmployeeDepartmentViewModel
+@{
+    ViewBag.Title = "GetInfo";
+}
+
+<h2>GetInfo</h2>
+
+<h2>Index</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>DeptId</th>
+            <th>DeptName</th>
+            <th>DeptHOD</th>
+            <th>DeptStart</th>
+            <th>DeptPassPerc</th>
+            <!-- Add more department columns as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model.Departments)
+        {
+            <tr>
+                <td>@department.DID</td>
+                <td>@department.DeptName</td>
+                <td>@department.DeptHOD</td>
+                <td>@department.DeptStart</td>
+                <td>@department.DeptPassPerc</td>
+                <!-- Add more department columns as needed -->
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th>EmpId</th>
+            <th>EmpName</th>
+            <th>EmpGender</th>
+            <th>EmpAddr</th>
+            <th>EmpSalary</th>
+            <!-- Add more employee columns as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model.Employees)
+        {
+            <tr>
+                <td>@employee.EID</td>
+                <td>@employee.EmpName</td>
+                <td>@employee.EmpGender</td>
+                <td>@employee.EmpAddr</td>
+                <td>@employee.EmpSalary</td>
+                <!-- Add more employee columns as needed -->
+            </tr>
+        }
+    </tbody>
+</table>

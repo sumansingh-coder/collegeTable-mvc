@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a63da65d53994941a98b85a9506690b6" Name="Diagram1">
-        <EntityTypeShape EntityType="CollegeDBModel.Department" Width="1.5" PointX="1.875" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.Department" Width="1.5" PointX="2.125" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CollegeDBModel.Employee" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="CollegeDBModel.FK__Employee__DeptID__4BAC3F29" ManuallyRouted="false" />
       </Diagram>
